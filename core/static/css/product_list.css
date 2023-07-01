@@ -1,0 +1,20 @@
+a {
+    color: white;
+}
+
+#img_wii {
+    float: left;
+
+}
+
+#search-input{
+    float: right;
+    position: relative;
+    top: 70px;
+}
+h1 {
+    position: relative;
+    left: 200px;
+    top: 50px; 
+}
+
