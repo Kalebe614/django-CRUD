@@ -10,7 +10,7 @@ a {
 #search-input{
     float: right;
     position: relative;
-    top: 70px;
+    top: 30px;
 }
 h1 {
     position: relative;
@@ -18,3 +18,8 @@ h1 {
     top: 50px; 
 }
 
+#btn-create{
+    position: relative;
+    left: -300px;
+    top: 120px; 
+}
