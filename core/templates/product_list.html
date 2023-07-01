@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/product_list.css' %}">
+<title>Products</title>
+
+{% endblock head %}
+
+{% block container %}
+
+<div class="container">
+    <img src="{% static 'images/nintendo_wii.jpeg'%}" alt="Nintendo Wii" id="img_wii">
+    <h1>List of products</h1>
+    <input type="text" id="search-input" placeholder="Filter">
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody id="product-list" class="product-list">
+            {% for product in products %}
+                <tr class="table-active">
+                    <td>{{product.id}}</td>
+                    <td><a href="#">{{product.name}}</a></td>
+                    <td>{{product.price | intcomma}} </td>
+                    <td>Ação </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script src="{% static 'js/product_list.js' %}"></script>
+{% endblock container %}
