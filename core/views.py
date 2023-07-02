@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 from django.urls import reverse_lazy
 from .models import ProductModel
 from .forms import ProductModelForm
@@ -22,3 +22,8 @@ class ProductCreateView(CreateView):
         response = super().form_valid(form)
         messages.success(self.request, 'Product created successfully')
         return response
+
+class ProductDeleteView(DeleteView):
+    model = ProductModel
+    template = 'product_list.html'
+    success_url = reverse_lazy('product_list')
