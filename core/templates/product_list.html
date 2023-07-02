@@ -10,9 +10,16 @@
 {% block container %}
 
 <div class="container">
+    {% if messages %}
+        {% for message in messages  %}
+          <div class="alert alert-success" role="alert">
+            {{ message }}
+          </div> 
+        {% endfor %}
+      {% endif %}
     <img src="{% static 'images/nintendo_wii.jpeg'%}" alt="Nintendo Wii" id="img_wii">
     <a href="{% url 'product_create' %}"> <button type="button" class="btn btn-warning" id="btn-create">Create</button></a>
-   
+      
     <h1>List of products</h1>
     <input type="text" id="search-input" placeholder="Filter">
     <table class="table table-dark table-hover">

@@ -27,3 +27,8 @@ class ProductDeleteView(DeleteView):
     model = ProductModel
     template = 'product_list.html'
     success_url = reverse_lazy('product_list')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, 'Product deleted successfully')
+        return response
