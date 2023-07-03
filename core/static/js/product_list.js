@@ -25,6 +25,7 @@ searchInput.addEventListener('keyup', filterProducts);
     const modalTitle = document.querySelector('#deleteModal .modal-title');
     const modalBody = document.querySelector('#deleteModal .modal-body');
     const modal= document.getElementById("deleteModal");
+    
     modal.addEventListener('hidden.bs.modal',function(){
         const form = modal.querySelector('form');
         form.reset();

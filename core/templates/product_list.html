@@ -7,7 +7,7 @@
 
 {% endblock head %}
 
-{% block container %}
+{% block content %}
 
 <div class="container">
     {% if messages %}
@@ -35,10 +35,13 @@
             {% for product in products %}
                 <tr class="table-active">
                     <td>{{product.id}}</td>
-                    <td><a href="#">{{product.name}}</a></td>
+                    <td>{{product.name}}</td>
                     <td>{{product.price | intcomma}} </td>
-                    <td><button type="button" class="btn btn-danger delete-button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-product-id="{{product.id}}" data-product-name="{{product.name}}" data-product-price="{{product.price}}">Delete</button></td>
-                </td>
+                    <td id="actions"><button type="button" class="btn btn-danger delete-button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-product-id="{{product.id}}" data-product-name="{{product.name}}" data-product-price="{{product.price}}">Delete</button>
+                     <a href="{% url 'product_update' product.id %}"><button type="button" class="btn btn-warning update-button">Update</button></a>
+                    </td>
+
+                  </td>
                 </tr>
             {% endfor %}
         </tbody>
@@ -68,4 +71,4 @@
           </div>
  <!-- End Modal--> 
 <script src="{% static 'js/product_list.js' %}"></script>
-{% endblock container %}
+{% endblock content %}
