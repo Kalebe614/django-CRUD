@@ -23,3 +23,9 @@ h1 {
     left: -300px;
     top: 120px; 
 }
+#actions{
+    text-align: center;
+}
+tr {
+    text-align: center;
+}

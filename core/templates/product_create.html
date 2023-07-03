@@ -8,7 +8,7 @@
     {% bootstrap_javascript %}
     {% endblock head %}
 
-{% block container %}
+{% block content %}
     
     
 <div class="container-sm">
@@ -22,7 +22,7 @@
 
     <h1>Create A New Product</h1>
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p}}
 
@@ -32,4 +32,4 @@
     </form>
 </div>
 
-{% endblock container %}
+{% endblock content %}
