@@ -29,3 +29,7 @@ h1 {
 tr {
     text-align: center;
 }
+#msgAreYouSure{
+    color: red;
+    font-size: 21px;
+}
