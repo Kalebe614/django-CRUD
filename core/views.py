@@ -10,7 +10,7 @@ from django.core.paginator import Paginator
 class ProductListView(ListView):
     model = ProductModel
     template_name = 'product_list.html'
-    queryset = ProductModel.objects.all().filter(activity=True)
+    queryset = ProductModel.objects.all().filter(activity=True).order_by('-id')
     context_object_name = "products"
     paginate_by = 2
 

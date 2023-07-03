@@ -34,8 +34,8 @@
         <label for="id_image">Image:</label>
     </p>
     <p>
-        {% if object.activity %}
-        <img src="{{ object.image.url }}" alt="Current Image">
+        {% if object.image %}
+             <img src="{{ object.image.url }}" alt="Current Image">
         {% endif %}
     </p>
 
