@@ -33,6 +33,7 @@
             </tr>
         </thead>
         <tbody id="product-list" class="product-list">
+            
             {% for product in products %}
                 <tr class="table-active">
                     <td>{{product.id}}</td>
@@ -52,8 +53,49 @@
             {% endfor %}
         </tbody>
     </table>
-</div>
-  
+
+    <!--Start Pagination-->
+    
+
+      <nav aria-label="...">
+        <ul class="pagination justify-content-end">
+          
+          <!--Previous Page-->
+            {% if page_obj.has_previous %}
+              <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+            {% else %}
+              <li class="page-item disabled"><a class="page-link" href="">Previous</a></li>
+            {% endif %}
+          <!--End Previous Page-->
+
+           <!--Pages-->
+           {% if page_obj.has_previous %}
+           <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a></li>
+           {% endif %}
+              
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a>
+          </li>
+         
+          {% if page_obj.has_next %}
+          <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">{{ page_obj.next_page_number }}</a></li>
+          {% endif %}
+          <!--End Pages-->
+
+          <!--Next Page-->
+          {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}"">Next</a></li>
+          {% else %}
+            <li class="page-item disabled"><a class="page-link" href="">Next</a></li>
+           {% endif %}
+           <!--End Next Page-->
+         
+        </ul>
+      </nav>
+  </div>
+    <!--End Pagination-->
+
+ 
   <!--Begin modal -->
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
             <div class="modal-dialog">
@@ -76,5 +118,8 @@
             </div>
           </div>
  <!-- End Modal--> 
+
+            
+
 <script src="{% static 'js/product_list.js' %}"></script>
 {% endblock content %}
