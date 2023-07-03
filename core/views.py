@@ -1,16 +1,18 @@
-from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from .models import ProductModel
 from .forms import ProductModelForm
 from django.contrib import messages
+from django.core.paginator import Paginator
+
 
 class ProductListView(ListView):
     model = ProductModel
     template_name = 'product_list.html'
     queryset = ProductModel.objects.all().filter(activity=True)
     context_object_name = "products"
+    paginate_by = 2
 
 class ProductCreateView(CreateView):
     model = ProductModel
