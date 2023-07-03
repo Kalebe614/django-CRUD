@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Detail Product</title>
+{% endblock head %}
+
+{% block content %}
+<div class="container">
+    <h1>Detail Product</h1><br>
+
+    <p>
+        <label for="id_name">Name:</label>
+        <input type="text" disabled name="name" value="{{object.name}}" class="form-control" placeholder="Name Product"
+            maxlength="100" required id="id_name">
+    </p>
+    <p>
+        <label for="id_price">Price:</label>
+        <input type="number" disabled name="price" value="{{object.price}}" class="form-control" placeholder="Price Product"
+            step="0.01" required id="id_price">
+    </p>
+    <P>
+        <label for="id_description">Description:</label>
+        <textarea name="description" disabled  cols="40" rows="3" class="form-control" maxlength="300" required
+            id="id_description">{{object.description}}
+            </textarea>
+    </P>
+    <P>
+        <label for="id_activity">Active: </label>
+        <input type="checkbox" disabled name="activity" id="id_activity" {%if object.activity %} checked {% endif %}>
+
+    <P>
+
+    <p>
+        <label for="id_image">Image:</label>
+    </p>
+    <p>
+        {% if object.activity %}
+        <img src="{{ object.image.url }}" alt="Current Image">
+        {% endif %}
+    </p>
+
+    <p>
+
+        <a href="{% url 'product_list' %}"><button type="button" class="btn btn-primary">Back</button></a>
+    </p>
+    {% endblock content %}

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load humanize %}
+
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/product_list.css' %}">
 <title>Products</title>
@@ -37,8 +38,13 @@
                     <td>{{product.id}}</td>
                     <td>{{product.name}}</td>
                     <td>{{product.price | intcomma}} </td>
-                    <td id="actions"><button type="button" class="btn btn-danger delete-button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-product-id="{{product.id}}" data-product-name="{{product.name}}" data-product-price="{{product.price}}">Delete</button>
-                     <a href="{% url 'product_update' product.id %}"><button type="button" class="btn btn-warning update-button">Update</button></a>
+                    <td id="actions">
+                      <button type="button" class="btn btn-danger delete-button"
+                        data-bs-toggle="modal" data-bs-target="#deleteModal" data-product-id="{{product.id}}" 
+                        data-product-name="{{product.name}}" data-product-price="{{product.price}}">Delete
+                      </button>
+                      <a href="{% url 'product_update' product.id %}"><button type="button" class="btn btn-warning update-button">Update</button></a>
+                      <a href="{% url 'product_detail' product.id %}"><button type="button" class="btn btn-primary detail-button">Detail</button></a>
                     </td>
 
                   </td>

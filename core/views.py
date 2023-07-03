@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from .models import ProductModel
@@ -43,3 +43,8 @@ class ProductUpdateView(UpdateView):
         response = super().form_valid(form)
         messages.success(self.request, 'Product updated successfully')
         return response
+
+class ProductDetailView(DetailView):
+    model = ProductModel
+    template_name = 'product_detail.html'
+    

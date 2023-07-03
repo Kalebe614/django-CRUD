@@ -43,7 +43,7 @@ searchInput.addEventListener('keyup', filterProducts);
             const productId = this.getAttribute('data-product-id');
             const productName = this.getAttribute('data-product-name');
             const productPrice = this.getAttribute('data-product-price');
-            
+
             const modalTitle = document.querySelector('#deleteModal .modal-title');
             const modalBody = document.querySelector('#deleteModal .modal-body');
             
@@ -53,7 +53,7 @@ searchInput.addEventListener('keyup', filterProducts);
 
             modalTitle.textContent += `Delete Product: ${productName}`;
             modalBody.innerHTML += `
-                <p>Are you sure you want to delete the product?</p>
+                <p id="msgAreYouSure">Are you sure you want to delete the product?</p>
                 <p>Name: ${productName}</p>
                 <p>Price: ${productPrice}</p>
             `;
