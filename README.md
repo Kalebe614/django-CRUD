@@ -24,13 +24,13 @@
 
 ## Contents
 
--[Technologies Used](#technologies-used)
+- [Technologies Used](#technologies-used)
 
--[Installation](#installation)
+- [Installation](#installation)
 
--[Credits](#credit)
+- [Credits](#credit)
 
--[Contact](contact)
+- [Contact](contact)
 
 ## Technologies Used
 
