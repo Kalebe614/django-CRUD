@@ -1,4 +1,4 @@
-#           Crud Django using CBV
+#Crud Django using CBV
 
 [crude]: https://www.codecademy.com/article/what-is-crud
 
@@ -83,7 +83,7 @@ python manage.py runserver
 Now you can open: http://localhost:8000 or http://127.0.0.1:8000 to view it in the browser.
 </p>
 
-##Credits
+## Credits
 CRUD app was built by [Kalebe de Oliveira][my_github]
 ##Contact
 
