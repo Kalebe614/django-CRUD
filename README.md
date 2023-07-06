@@ -18,10 +18,11 @@
 
 [my_github]: https://github.com/Kalebe614
 
-### A simple [CRUD][crude] application built with [Python][python] and [Django][django] using [CBV][cbv].
+#### A simple [CRUD][crude] application built with [Python][python] and [Django][django] using [CBV][cbv].
 
-
-![Img_Project](core/static/images/CRUDE.png)
+<p>
+ ![Img_Project](core/static/images/CRUDE.png)
+</p>
 
 
 ## Contents
