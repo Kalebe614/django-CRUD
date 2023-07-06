@@ -1,5 +1,5 @@
-*venv
-*media
+*.venv
+*.media
 *.log
 *.pot
 *.pyc
