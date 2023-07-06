@@ -20,9 +20,9 @@
 
 #### A simple [CRUD][crude] application built with [Python][python] and [Django][django] using [CBV][cbv].
 
-<p>
+
 ![Img_Project](core/static/images/CRUDE.png)
-</p>
+
 
 
 ## Contents
