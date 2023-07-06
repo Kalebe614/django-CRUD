@@ -31,9 +31,9 @@
 
 - [Installation](#installation)
 
-- [Credits](#credit)
+- [Credits](#credits)
 
-- [Contact](contact)
+- [Contact](#contact)
 
 ## Technologies Used
 
@@ -43,6 +43,7 @@
 - [CSS][css]
 - [Javascript][javascript]
 - [Bootstrap][bootstrap]
+- 
 ## Installation
 
 <p>1. Clone the repository:
@@ -88,8 +89,8 @@ Now you can open: http://localhost:8000 or http://127.0.0.1:8000 to view it in t
 
 ## Credits
 CRUD app was built by [Kalebe de Oliveira][my_github]
-##Contact
 
+## Contact
 - Email: <a ref="mailto:kalebe613@gmail.com">kalebe613@gmail.com</a>
 - [GitHub](https://github.com/Kalebe614)
->>>>>>> 6d719e8 (Update README.md)
+
