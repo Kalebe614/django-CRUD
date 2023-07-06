@@ -1,4 +1,4 @@
-#Crud Django using CBV
+# <p align="center"><span style="color: blue;">Crud Django using CBV</span></p>
 
 [crude]: https://www.codecademy.com/article/what-is-crud
 
@@ -32,7 +32,7 @@
 
 -[Contact](contact)
 
-##Technologies Used
+## Technologies Used
 
 - [Python][python]
 - [Django][django]
