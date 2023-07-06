@@ -1,2 +1,2 @@
-#               django-CRUD
+#django-CRUD
 Crud Django using CBV
