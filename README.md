@@ -49,7 +49,7 @@
 <p>1. Clone the repository:
 
 ```
-https://github.com/Kalebe614/django-CRUD.git
+git clone https://github.com/Kalebe614/django-CRUD.git
 ```
 
 </p>
@@ -58,7 +58,7 @@ https://github.com/Kalebe614/django-CRUD.git
 2. Navigate to the project directory:
 
 ```
-cd DJANGO-CRUD  
+cd django-CRUD
 ```
 </p> 
  
