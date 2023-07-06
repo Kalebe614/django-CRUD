@@ -41,7 +41,7 @@
 - [Django][django]
 - [HTML][html]
 - [CSS][css]
-- [Javascript][javascript]
+- [JavaScript][javascript]
 - [Bootstrap][bootstrap]
 - 
 ## Installation
