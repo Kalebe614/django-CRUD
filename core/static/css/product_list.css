@@ -1,21 +1,20 @@
-a {
-    color: white;
-}
-
 #img_wii {
     float: left;
 
 }
-
-#search-input{
+.search {
     float: right;
     position: relative;
     top: 30px;
+    align-items: right;
 }
+
+
 h1 {
     position: relative;
-    left: 200px;
-    top: 50px; 
+    align-items: center;
+    left: 220px;
+    top: 20px;
 }
 
 #btn-create{

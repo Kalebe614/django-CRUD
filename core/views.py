@@ -12,7 +12,7 @@ class ProductListView(ListView):
     template_name = 'product_list.html'
     queryset = ProductModel.objects.all().filter(activity=True).order_by('-id')
     context_object_name = "products"
-    paginate_by = 2
+    paginate_by = 9
 
 class ProductCreateView(CreateView):
     model = ProductModel
