@@ -1,4 +1,4 @@
-#<p align="center" style="color:blue">Crud Django using CBV</p>
+#           Crud Django using CBV
 
 [crude]: https://www.codecademy.com/article/what-is-crud
 
