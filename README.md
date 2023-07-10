@@ -43,7 +43,7 @@
 - [CSS][css]
 - [JavaScript][javascript]
 - [Bootstrap][bootstrap]
-- 
+  
 ## Installation
 
 <p>1. Clone the repository:
