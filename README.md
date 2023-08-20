@@ -16,7 +16,7 @@
 
 [bootstrap]: https://getbootstrap.com/
 
-[my_github]: https://github.com/Kalebe614
+[my_github]: https://kalebe614.github.io/
 
 #### <p align="center">A simple [CRUD][crude] application built with [Python][python] and [Django][django] using [CBV][cbv]</p>
 
