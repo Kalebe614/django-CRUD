@@ -18,7 +18,7 @@
 
 [my_github]: https://kalebe614.github.io/
 
-#### <p align="center">A simple [CRUD][crude] application built with [Python][python] and [Django][django] using [CBV][cbv]</p>
+#### <p align="center">A [CRUD][crude] application built with [Python][python] and [Django][django] using [CBV][cbv]</p>
 
 
 ![Img_Project](core/static/images/CRUDE.png)
