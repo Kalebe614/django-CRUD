@@ -32,3 +32,17 @@ tr {
     color: red;
     font-size: 21px;
 }
+#msgAreYouSure{
+    color: red;
+    font-size: 21px;
+}
+.modal-body{
+    font-family: Helvetica;
+    font-size: 17px;
+}
+.modal-footer{
+    background-color: #10080854;
+}
+.modal-header{
+    background-color: #10080854;
+}
