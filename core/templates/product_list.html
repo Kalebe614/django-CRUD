@@ -3,132 +3,115 @@
 {% load humanize %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/product_list.css' %}">
-
-<title>Products</title>
-
+  <link rel="stylesheet" href="{% static 'css/product_list.css' %}">
+  <title>Products</title>
 {% endblock head %}
 
 {% block content %}
 
 <div class="container">
-    {% if messages %}
-        {% for message in messages  %}
-          <div class="alert alert-success" role="alert">
-            {{ message }}
-          </div> 
-        {% endfor %}
-      {% endif %}
-   
-    <a href="{% url 'product_create' %}"> <button type="button" class="btn btn-warning" id="btn-create">Create</button></a>
-    <img src="{% static 'images/nintendo_wii.jpeg'%}" alt="Nintendo Wii" id="img_wii">
-
-      <h1>List of products</h1>
-
+  <!-- Messages from django -->
+   {% if messages %}
+      {% for message in messages  %}
+      <div class="alert alert-success" role="alert">
+          {{ message }}
+      </div>
+      {% endfor %}
+   {% endif %}
     
-    
-    <div class="search">
+  <!-- Image and Button to create a new product -->
+   <a href="{% url 'product_create' %}"> <button type="button" class="btn btn-warning" id="btn-create">Create</button></a>
+   <img src="{% static 'images/nintendo_wii.jpeg'%}" alt="Nintendo Wii" id="img_wii">
+  
+   <!--Titel and search-->
+   <h1>List of products</h1>
+
+   <div class="search">
       <img src="{% static 'images/magnifying_glass.png' %}" alt="magnifying_glass" id="magnifying-glass">
       <input type="text" id="search-input" placeholder="Filter">
-    </div>
-    
-    <table class="table table-dark table-hover">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        <tbody id="product-list" class="product-list">
-            
-            {% for product in products %}
-                <tr class="table-active">
-                    <td>{{product.id}}</td>
-                    <td>{{product.name}}</td>
-                    <td>{{product.price | intcomma}} </td>
-                    <td id="actions">
-                      <button type="button" class="btn btn-danger delete-button"
-                        data-bs-toggle="modal" data-bs-target="#deleteModal" data-product-id="{{product.id}}" 
-                        data-product-name="{{product.name}}" data-product-price="{{product.price}}">Delete
-                      </button>
-                      <a href="{% url 'product_update' product.id %}"><button type="button" class="btn btn-warning update-button">Update</button></a>
-                      <a href="{% url 'product_detail' product.id %}"><button type="button" class="btn btn-primary detail-button">Detail</button></a>
-                    </td>
+   </div>
 
-                  </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+   <!-- List of Products-->
+   <table class="table table-dark table-hover">
+      <thead>
+         <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+         </tr>
+      </thead>
+      <tbody id="product-list" class="product-list">
+         {% for product in products %}
+         <tr class="table-active">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price | intcomma}} </td>
+            <td id="actions">
+               <button type="button" class="btn btn-danger delete-button"
+                  data-bs-toggle="modal" data-bs-target="#deleteModal" data-product-id="{{product.id}}" 
+                  data-product-name="{{product.name}}" data-product-price="{{product.price}}">Delete
+               </button>
+               <a href="{% url 'product_update' product.id %}"><button type="button" class="btn btn-warning update-button">Update</button></a>
+               <a href="{% url 'product_detail' product.id %}"><button type="button" class="btn btn-primary detail-button">Detail</button></a>
+            </td>
+            </td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
 
-    <!--Start Pagination-->
-    
+   <!--Start Pagination-->
+   <nav aria-label="...">
+      <ul class="pagination justify-content-center">
+         <!--Previous Page-->
+         {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+         {% else %}
+            <li class="page-item disabled"><a class="page-link" href="">Previous</a></li>
+         {% endif %}
 
-      <nav aria-label="...">
-        <ul class="pagination justify-content-center">
-          
-          <!--Previous Page-->
-            {% if page_obj.has_previous %}
-              <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
-            {% else %}
-              <li class="page-item disabled"><a class="page-link" href="">Previous</a></li>
-            {% endif %}
-          <!--End Previous Page-->
-
-           <!--Pages-->
-           {% if page_obj.has_previous %}
-           <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a></li>
-           {% endif %}
-              
-          <li class="page-item active" aria-current="page">
-            <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a>
-          </li>
-         
-          {% if page_obj.has_next %}
-          <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">{{ page_obj.next_page_number }}</a></li>
-          {% endif %}
-          <!--End Pages-->
-
-          <!--Next Page-->
-          {% if page_obj.has_next %}
+         <!--Pages-->
+         {% if page_obj.has_previous %}
+             <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a></li>
+         {% endif %}
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a>
+            </li>
+         {% if page_obj.has_next %}
+             <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">{{ page_obj.next_page_number }}</a></li>
+         {% endif %}
+  
+         <!--Next Page-->
+         {% if page_obj.has_next %}
             <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}"">Next</a></li>
-          {% else %}
+         {% else %}
             <li class="page-item disabled"><a class="page-link" href="">Next</a></li>
-           {% endif %}
-           <!--End Next Page-->
-         
-        </ul>
-      </nav>
-  </div>
-    <!--End Pagination-->
+         {% endif %}
+      </ul>
+   </nav>
+</div>
 
- 
-  <!--Begin modal -->
-        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="DeleteModallLabel"></h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                   
-                </div>
-                <div class="modal-footer">
-                    <form action="" method="post" id="deleteForm">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    </form>                 
-                </div>
-              </div>
-            </div>
-          </div>
- <!-- End Modal--> 
-
-            
+<!--Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="DeleteModallLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+         </div>
+         <div class="modal-footer">
+            <form action="" method="post" id="deleteForm">
+               {% csrf_token %}
+               <button type="submit" class="btn btn-danger">Delete</button>
+               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
 
 <script src="{% static 'js/product_list.js' %}"></script>
 {% endblock content %}
