@@ -51,7 +51,6 @@ searchInput.addEventListener('keyup', filterProducts);
             const url = `/delete/${productId}/`;
             deleteForm.setAttribute('action', url);
 
-            modalTitle.textContent += `Delete Product: ${productName}`;
             modalBody.innerHTML += `
                 <p id="msgAreYouSure">Are you sure you want to delete the product?</p>
                 <p>Name: ${productName}</p>
